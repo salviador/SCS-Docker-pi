@@ -11,12 +11,15 @@ import "./../App.css";
 
 //const websocketUrl = "ws://192.168.1.16:9001";
 var loc = window.location, new_uri;
-const websocketUrl = "ws://" + loc.host + ":9001";
+const websocketUrl = "ws://" + loc.host + ":1884";
 
 //const ADDRESS_SERVER = "http://192.168.1.16/";
 const ADDRESS_SERVER = "/";
 
-
+const option_conn = {
+        username: 'scs',
+        password: 'scs'
+    }
 
 
 function Test() {
@@ -55,7 +58,15 @@ function Test() {
                 client.end();
                 client.close();
             }
-            client = mqtt.connect(websocketUrl);
+            client = mqtt.connect(websocketUrl, option_conn);
+            client.stream.on("error", (err) => {
+                console.log("MQTT errorrrrrrrrr");
+                console.log("MQTT errorrrrrrrrr");
+                console.log("MQTT errorrrrrrrrr");
+                console.log("MQTT errorrrrrrrrr");
+                client.end();
+              });
+
             setMqttClient(client);
 
             client.on('connect', function () {
