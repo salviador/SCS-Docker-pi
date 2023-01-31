@@ -1,6 +1,6 @@
 #!/bin/sh
 
-service ssh start
+service ssh start &
 
 cd /home/pi/SCS-Docker-pi/SCS/APP
 

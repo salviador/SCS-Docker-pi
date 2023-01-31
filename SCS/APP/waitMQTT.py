@@ -31,6 +31,7 @@ while True:
 	else:
 		print("CONNESSOOOOOOOOOOOOOOOOOO")
 		client.disconnect()
+		time.sleep(5)
 		break
 
 
