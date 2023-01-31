@@ -34,6 +34,7 @@ dir_path_app = s + 'APP/'
 databaseAttuatori = importlib.machinery.SourceFileLoader('databaseAttuatori', dir_path_app + 'databaseAttuatori.py').load_module()
 nodered = importlib.machinery.SourceFileLoader('nodered', dir_path_app + 'nodered.py').load_module()
 noderedAWS = importlib.machinery.SourceFileLoader('noderedAWS', dir_path_app + 'noderedAWS.py').load_module()
+homeAssistant = importlib.machinery.SourceFileLoader('HomeAssistant', dir_path_app + 'HomeAssistant.py').load_module()
 
 
 
@@ -99,6 +100,9 @@ class noderedHomeHandler(tornado.web.RequestHandler):
     def get(self):
         self.render('site/build/index.html')
 class NoderedAlexaAWSHandler(tornado.web.RequestHandler):
+    def get(self):
+        self.render('site/build/index.html')
+class HomeAssistantHandler(tornado.web.RequestHandler):
     def get(self):
         self.render('site/build/index.html')
 
@@ -357,6 +361,22 @@ class Get_NodeRedAWS_manual_flow(tornado.web.RequestHandler):
         self.write(js)
 
 
+# ******************** Home Assistant**************************
+# ******************** Home Assistant **************************
+# ******************** Home Assistant **************************
+class Get_Home_Assistant_Configuration_flow(tornado.web.RequestHandler):
+    def get(self):
+        self.set_header("Access-Control-Allow-Origin", "*")
+        n = homeAssistant.HomeAssistant()
+        js = n.GeneraConfig()
+        self.write(js)
+
+
+
+
+
+
+
 # ******************** AWS **************************
 # ******************** AWS **************************
 # ******************** AWS **************************
@@ -523,6 +543,7 @@ def make_app():
         (r"/noderedAlexa.html", noderedAlexaandler),
         (r"/noderedHome.html", noderedHomeHandler),
         (r"/NoderedAlexaAWS.html", NoderedAlexaAWSHandler),
+        (r"/homeAssistant.html", HomeAssistantHandler),
 
 
         
@@ -542,6 +563,9 @@ def make_app():
         (r"/Send_to_NodeRed.json", Send_to_NodeRed),
         (r"/Get_NodeRed_manual_flow.json", Get_NodeRed_manual_flow),
         (r"/Get_NodeRedAWS_manual_flow.json", Get_NodeRedAWS_manual_flow),
+
+        #Home Assistant
+        (r"/Get_Home_Assistant_Configuration.json", Get_Home_Assistant_Configuration_flow),
 
 
  

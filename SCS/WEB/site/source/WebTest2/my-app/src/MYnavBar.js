@@ -17,7 +17,7 @@ function MYnavBar() {
                             <Nav.Link href="/">Home</Nav.Link>
                             <Nav.Link href="configurazione.html">Configurazioni</Nav.Link>
                             <Nav.Link href="test.html">Test</Nav.Link>
-                            <Nav.Link href="noderedHome.html">Node-Red</Nav.Link>                           
+                            <Nav.Link href="noderedHome.html">Node-Red/Home Assistant</Nav.Link>                           
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

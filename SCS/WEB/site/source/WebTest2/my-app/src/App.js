@@ -10,6 +10,7 @@ import "./App.css";
 import noderedAlexa from './NodeRedAlexa/NodeRedAlexa';
 import noderedHome from './NodeRedAlexa/noderedHome';
 import NoderedAlexaAWS from './NodeRedAlexa/noderedAlexaAWS';
+import HomeAssistant from './NodeRedAlexa/HomeAssistant';
 
 
 
@@ -29,6 +30,7 @@ function App() {
         <Route exact path="/noderedHome.html" component={noderedHome}/>
         <Route exact path="/noderedAlexa.html" component={noderedAlexa}/>
         <Route exact path="/NoderedAlexaAWS.html" component={NoderedAlexaAWS}/>
+        <Route exact path="/homeAssistant.html" component={HomeAssistant}/>
 
 
       </div>

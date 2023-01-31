@@ -59,6 +59,23 @@ function NoderedHome() {
 
 
 
+                <div className="card-deck text-center"  >
+                    <div className="card mb-4 shadow-sm" style={{ border: "1px solid black" }}>
+                        <div className="card-header">
+                            <h4 className="my-0 font-weight-normal">Home Assistant "Configuration.yaml"</h4>
+                        </div>
+                        <div className="card-body">
+                            <ul className="list-unstyled mt-3 mb-4">
+                                <li>
+                                    <a href="/homeAssistant.html"><Button variant="outline-primary"  >Entra</Button></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
 
 
 

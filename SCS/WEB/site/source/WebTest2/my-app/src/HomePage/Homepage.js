@@ -77,12 +77,13 @@ function Homepage() {
 
                     <div class="card mb-4 box-shadow">
                         <div class="card-header">
-                        <h4 className="my-0 font-weight-normal">Node-RED</h4>
+                        <h4 className="my-0 font-weight-normal">Node-RED / Home Assistant</h4>
                         </div>
                         <div class="card-body d-flex flex-column">
                             <ul className="list-unstyled mt-3 mb-4">
                                 <li>AWS IoTs</li>
                                 <li>Alexa virtual-smart-home</li>
+                                <li>Home Assistant "configuration.yaml" </li>
                             </ul>
                             <button type="button" class="btn btn-lg btn-block btn-primary mt-auto" style={{marginBottom:'1em'}} onClick={handleClickNodeRed}>Entra</button>
                         </div>
