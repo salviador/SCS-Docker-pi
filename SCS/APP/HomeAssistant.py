@@ -156,12 +156,12 @@ mqtt:
   - unique_id: ' + nome.replace(" ","")  + '\n\
     name: "'+ nome +'" \n\
     modes: \n\
-    - "off" \n\
-    - "cool" \n\
-    - "heat" \n\
+      - "off" \n\
+      - "cool" \n\
+      - "heat" \n\
     swing_modes: \n\
-    - "on" \n\
-    - "off" \n\
+      - "on" \n\
+      - "off" \n\
     mode_command_topic: "/scsshield/device/'+ nome +'/set_modalita_termostato" \n\
     mode_command_template: >- \n\
      {% set values = { "auto":"0", "heat":"estate",  "cool":"inverno", "off":"off"} %} \n\
