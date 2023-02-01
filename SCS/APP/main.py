@@ -40,15 +40,24 @@ webapp = importlib.machinery.SourceFileLoader('webapp', dir_path_web + 'webapp.p
 
 
 
-enable_opto_factory = NativeFactory()
-enable_opto = LED(12, pin_factory=enable_opto_factory)
+
+my_factory = NativeFactory()
+enable_opto = LED(12, pin_factory=my_factory)
 enable_opto.on()
 
 
 dbm = databaseAttuatori.configurazione_database()
 
 
-loop = asyncio.get_event_loop()
+#loop = asyncio.get_event_loop()
+loop = asyncio.new_event_loop()
+asyncio.set_event_loop(loop)
+
+
+
+
+
+
 
 lock_uartTX = asyncio.Lock()
 
@@ -66,6 +75,39 @@ STOP = asyncio.Event()
 shield = SCS.SCSshield()
 shield.SetUART(ser)
 scsmqtt = mqtt2.SCSMQTT2(STOP)
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+from serial import Serial
+ser = Serial(port='/dev/serial0',baudrate=9600)
+while True:
+	ser.write(str.encode('c'))
+	time.sleep(0.1)
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -680,9 +722,27 @@ async def main():
 
 
 #rimuove TUTTI i RETAIN message in mosquitto
+#os.popen("sudo systemctl stop mosquitto.service").read()
+#os.popen("sudo rm /var/lib/mosquitto/mosquitto.db").read()
+#os.popen("sudo systemctl start mosquitto.service").read()
+
+
 
 popula_device()
 
+#process = subprocess.Popen(['node-red-start'],
+#					stdout=subprocess.PIPE, 
+#					stderr=subprocess.PIPE)
+
+#print(process)
+
+
+#process = subprocess.Popen(['systemctl', 'status nodered.service'],
+#					stdout=subprocess.PIPE, 
+#					stderr=subprocess.PIPE)                        
+
+#print(process)
+    
 
 loop.create_task(main())
 loop.run_forever()

@@ -108,8 +108,10 @@ class SCSMQTT2(object):
 
             print("MQTT Connect......... ")
 
-            self.client.set_auth_credentials('scs', 'scs')
+            self.client.set_auth_credentials('scs','scs')
+
             await self.client.connect("localhost",keepalive=65535)
+
 
             #client.publish('TEST/TIME', str(time.time()), qos=1)
             #print("MQTT WAIT")
