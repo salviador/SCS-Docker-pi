@@ -35,4 +35,6 @@
 **HomeAssistent Peconfigurato**
 
 <a href="https://drive.google.com/file/d/1Ub3w5bLfa4MsFImj2b4mugl0-CwWZRQA/view" target="_blank"> link </a>
+* username= scs
+* password= scs
 
