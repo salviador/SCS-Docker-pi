@@ -38,3 +38,8 @@
 * username= scs
 * password= scs
 
+**docker SCS**
+* port 2022
+* username= root
+* password= scs
+
